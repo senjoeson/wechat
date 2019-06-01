@@ -1,0 +1,32 @@
+server:
+  port: 8787
+
+  #  ssl:
+  #    key-store: keystore.p12
+  #    key-store-password: sunqiao
+  #    keyStoreType: PKCS12
+  #    keyAlias: tomcat
+
+
+
+
+logging:
+  pattern:
+    #console: '%clr(%d{HH:mm:ss}){yellow} [%clr(%thread){red}] %-5level --- %clr(%logger){green} | %msg%n'
+    level: trace
+
+  path: log
+  level:
+    com.senjoeson.framework: trace
+
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://localhost:3306/glassdb?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&rewriteBatchedStatements=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+

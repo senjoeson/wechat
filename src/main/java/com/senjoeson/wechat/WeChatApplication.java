@@ -10,6 +10,8 @@ import com.senjoeson.wechat.wechat.WeApi;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -23,7 +25,7 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 
 import static com.senjoeson.wechat.wechat.WeChatRequestImpl.APP_ID;
-
+@SpringBootApplication
 public class WeChatApplication extends BaseApplication<WeChatController> {
 
     public CheckLoginTask mCheckLoginTask;
@@ -85,5 +87,11 @@ public class WeChatApplication extends BaseApplication<WeChatController> {
     public void stop() throws Exception {
         System.out.println("执行了stop方法吗?");
         super.stop();
+    }
+
+
+    public static void main(String[] args) {
+        SpringApplication.run(WeChatApplication.class, args);
+        launch(args);
     }
 }

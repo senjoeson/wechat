@@ -1,6 +1,6 @@
 package com.senjoeson.wechat.beans;
 
-public class Group {
+public class Member {
 
 
     /**
@@ -17,6 +17,7 @@ public class Group {
      * UserName : @7ee2327477cd180aa966480d43653bb0
      */
 
+    private long memberId;
     private int AttrStatus;
     private String DisplayName;
     private String KeyWord;

@@ -38,7 +38,7 @@ public class Contact {
      * UserName : @53e380ef2d7281f22969fd1543e13580596241d2b92aa924dff8457d833c88ba
      * VerifyFlag : 0
      */
-
+    private long contactId;
     private String Alias;
     private int AppAccountFlag;
     private int AttrStatus;
@@ -69,7 +69,15 @@ public class Contact {
     private int UniFriend;
     private String UserName;
     private int VerifyFlag;
-    private List<Group> MemberList;
+    private List<Member> MemberList;
+
+    public long getContactId() {
+        return contactId;
+    }
+
+    public void setContactId(long contactId) {
+        this.contactId = contactId;
+    }
 
     public String getAlias() {
         return Alias;
@@ -311,11 +319,11 @@ public class Contact {
         this.VerifyFlag = VerifyFlag;
     }
 
-    public List<Group> getMemberList() {
+    public List<Member> getMemberList() {
         return MemberList;
     }
 
-    public void setMemberList(List<Group> MemberList) {
+    public void setMemberList(List<Member> MemberList) {
         this.MemberList = MemberList;
     }
 }
