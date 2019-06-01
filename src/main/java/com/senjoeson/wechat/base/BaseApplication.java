@@ -3,16 +3,19 @@ package com.senjoeson.wechat.base;
 
 import com.senjoeson.wechat.type.ResourceType;
 import com.senjoeson.wechat.utils.TextUtils;
+
+import java.net.URL;
+
+import javax.management.modelmbean.XMLParseException;
+
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-
-import javax.management.modelmbean.XMLParseException;
-import java.net.URL;
+import javafx.stage.WindowEvent;
 
 /**
  * @author MyPC
@@ -20,7 +23,6 @@ import java.net.URL;
  */
 
 public abstract class BaseApplication<T> extends Application {
-
 
 
     @Override
@@ -41,7 +43,7 @@ public abstract class BaseApplication<T> extends Application {
         primaryStage.setScene(scene);
         initPage(fxmlLoader, primaryStage, parent);
 
-        T newInstance =  fxmlLoader.getController();
+        T newInstance = fxmlLoader.getController();
         if (newInstance instanceof BaseController) {
 
             ((BaseController) newInstance).init(primaryStage, parent);
@@ -54,6 +56,14 @@ public abstract class BaseApplication<T> extends Application {
         if (!primaryStage.isShowing()) {
             primaryStage.show();
         }
+
+        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+              //  System.exit(0);
+                System.out.println("监听");
+            }
+        });
     }
 
 
@@ -84,7 +94,6 @@ public abstract class BaseApplication<T> extends Application {
     public static URL getImageURL(String imgResourceName) {
         return BaseApplication.class.getClassLoader().getResource(ResourceType.IMG + imgResourceName);
     }
-
 
 
     /**

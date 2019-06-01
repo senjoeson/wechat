@@ -1,7 +1,5 @@
 package com.senjoeson.wechat.wechat;
 
-import com.senjoeson.wechat.task.CheckLoginStateTask;
-
 public class WeChatCore {
 
     private static WeChatCore weChatCore;
@@ -24,12 +22,7 @@ public class WeChatCore {
     }
 
     private WeChatCore() {
-        //new Thread(()->)
-        while (true) {
-            if (checkScanState) {
-                new Thread(new CheckLoginStateTask()).start();
-            }
-        }
+
     }
 
 

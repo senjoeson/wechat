@@ -1,17 +1,9 @@
 package com.senjoeson.wechat.wechat;
 
-import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpUtil;
-import com.senjoeson.wechat.utils.CommonTools;
-import com.senjoeson.wechat.utils.TextUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import retrofit2.Retrofit;
 
-import java.io.InputStream;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
 
 public class WeChatRequestImpl implements IWeChatRequest {
 
